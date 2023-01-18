@@ -15,13 +15,13 @@ bot = Bot(TOKEN)
 
 
 def welcome(update, context) -> None:
-    update.message.reply_text(f"Hello {update.message.from_user.first_name}, Welcome To Shortner Fly Search Bot.\n"
-                              f"🔥 Directly Search From The Bot.")
+    update.message.reply_text(f"Hello {update.message.from_user.first_name}, Welcome To Black Market Searching Bot.\n"
+                              f" 🏴Directly Search From The Bot.")
     update.message.reply_text("👇 Enter Any Movie or Series Name 👇")
 
 
 def find_movie(update, context):
-    search_results = update.message.reply_text("Searching...")
+    search_results = update.message.reply_text("Searching via Black Market Fed...")
     query = update.message.text
     movies_list = search_movies(query)
     if movies_list:
@@ -30,9 +30,9 @@ def find_movie(update, context):
             keyboard = InlineKeyboardButton(movie["title"], callback_data=movie["id"])
             keyboards.append([keyboard])
         reply_markup = InlineKeyboardMarkup(keyboards)
-        search_results.edit_text('Here Is What I Found...', reply_markup=reply_markup)
+        search_results.edit_text('Here Is What I Found From Our Black Market...', reply_markup=reply_markup)
     else:
-        search_results.edit_text('Sorry No Results Are Found')
+        search_results.edit_text('Sorry No Results Are Found Please Visit @blackestharbour & Search There!')
 
 
 def movie_result(update, context) -> None:
@@ -45,7 +45,7 @@ def movie_result(update, context) -> None:
     links = s["links"]
     for i in links:
         link += "Open Link :-" + i + "\n" + links[i] + "\n\n"
-    caption = f"⚡ Fast Download Links :-\n\n{link}"
+    caption = f"⚡ Fastest Download Links :-\n\n{link}"
     if len(caption) > 4095:
         for x in range(0, len(caption), 4095):
             query.message.reply_text(text=caption[x:x+4095])

@@ -12,3 +12,5 @@
 
 
 * [![Deploy](https://img.shields.io/static/v1?label=Deploy&message=Tutorial&color=critical)](Youtube.com)
+
+Credits ~ Cynite ❤️
